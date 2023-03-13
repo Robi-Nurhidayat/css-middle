@@ -1,14 +1,21 @@
-* {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-  font-size: 17px;
+  font-size: 1.7rem;
   font-family: "Lato", sans-serif;
   line-height: 1.7;
-  padding: 30px;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
 .header {
@@ -24,13 +31,13 @@ body {
   clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 3rem;
+  left: 3rem;
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   left: 50%;
   top: 40%;
@@ -41,33 +48,33 @@ body {
 .heading-primary {
   text-transform: uppercase;
   color: #fff;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
-  font-size: 60px;
-  letter-spacing: 30px;
+  font-size: 6rem;
+  letter-spacing: 3rem;
   animation: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
-  font-size: 30px;
-  letter-spacing: 10px;
+  font-size: 3rem;
+  letter-spacing: 1rem;
   animation: moveInRight 1s ease-in-out;
 }
 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
 
   80% {
-    transform: translateX(20px);
+    transform: translateX(2rem);
   }
 
   100% {
@@ -79,11 +86,11 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
 
   80% {
-    transform: translateX(-20px);
+    transform: translateX(-2rem);
   }
 
   100% {
@@ -92,6 +99,22 @@ body {
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+.btn--animated {
+  animation: moveInBottom 1s ease-out;
+  animation-fill-mode: backwards;
+}
 .btn,
 .btn:link,
 .btn:visited {
@@ -108,37 +131,40 @@ body {
 }
 
 .btn:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1rem);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
 }
 
 .btn:active {
   transform: translateY(5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
-}
-.btn--white::after {
-  background-color: #fff;
 }
 
 .btn::after {
   content: "";
-  display: inline-block;
-  height: 100%;
   width: 100%;
+  height: 100%;
   border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: inline-block;
+
   z-index: -1;
-  transition: all 0.4s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.25s;
+}
+
+.btn--white::after {
+  background-color: #fff;
+  color: #777;
 }
 
 .btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
+  transform: scaleX(1.2) scaleY(1.5);
   opacity: 0;
 }
