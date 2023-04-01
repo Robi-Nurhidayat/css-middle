@@ -90,6 +90,9 @@ body {
 .u-center-text {
   text-align: center; }
 
+.u-margin-bottom-8 {
+  margin-bottom: 80rem; }
+
 .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
@@ -133,6 +136,12 @@ body {
 .btn--animated {
   animation: moveInBottom 1s ease-out;
   animation-fill-mode: backwards; }
+
+.row {
+  max-width: 144rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 6rem; }
 
 .header {
   height: 95vh;
