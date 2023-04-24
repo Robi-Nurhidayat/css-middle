@@ -1,4 +1,7 @@
 .btn {
+  // element <button> tidak bisa menerapkan code css dibawah, karena link, visited  khusus untuk tag <a>,
+  // maka dari itu di tambahkan &, arti nya kelas btn
+  &,
   &:link,
   &:visited {
     text-decoration: none;
@@ -9,6 +12,10 @@
     font-size: $default-font-size;
     transition: all 0.3s;
     position: relative;
+
+    // for <button>  element
+    border: none;
+    cursor: pointer;
   }
   &:hover {
     transform: translateY(-1rem);
@@ -20,7 +27,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(5px);
 
     box-shadow: 0 0.5rem 1.5rem rgba($color-black, 0.4);
