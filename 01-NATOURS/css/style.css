@@ -1,3 +1,19 @@
+/*
+
+- Phone only         0px    - 600px
+- Tablet Portrait    600px  - 900px
+- Tablet Landscape   900px  - 1200px
+- Dekstop 	     1200px - 1800px -> di mana style default yang akan digunakan
+- Big Desktop	     1800px - > 1800px 
+*/
+/*
+pilihan breakpoints
+
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -43,6 +59,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
   padding: 3rem;
