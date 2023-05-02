@@ -36,6 +36,11 @@
     transition: all 0.8s cubic-bezier(0.83, 0, 0.17, 1);
     z-index: 1000;
     // transform: scale(70);
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
   }
 
   &__nav {
