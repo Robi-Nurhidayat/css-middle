@@ -11,6 +11,20 @@
   opacity: 0;
   visibility: hidden;
 
+  // untuk sekarang 2023 bulan mei chrome sudah support
+  // backdrop-filter: blur(10px);
+  // -webkit-backdrop-filter: blur(10px);
+  // background-color: rgba($color-black, 0.3);
+
+  // jika belum support kita gunakan sebagai berikut
+
+  @supports (backdrop-filter: blur(10px)) or
+    (-webkit-backdrop-filter: blur(10px)) {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba($color-black, 0.3);
+  }
+
   &__content {
     @include positionAbsoluteCenter;
     width: 75%;
